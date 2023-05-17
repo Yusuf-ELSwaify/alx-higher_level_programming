@@ -7,7 +7,7 @@ def roman_to_int(roman_string):
     prev = 0
 
     for i in roman_string[::-1]:
-        value = romans[i]
+        value = romans.get(i, 0)
         res += value * 1 if prev <= value else -1
         prev = value
     return res
