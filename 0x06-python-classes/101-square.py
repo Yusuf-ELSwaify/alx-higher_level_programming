@@ -78,12 +78,13 @@ class Square:
 
     def __str__(self):
         """Print the square with #"""
-        [print(((" " * self.__position[0]) + "#" * self.__size)
-               if i >= self.__position[1] else "")
-            for i in range(self.__size + self.__position[1])]
-        if self.__size == 0:
-            print()
-        return ""
+        draw_size = self.__size + self.__position[1]
+        square_str = "".join((((" " * self.__position[0]) + "#" * self.__size
+                               if i >= self.__position[1] else "") +
+                              ("\n" if (i < (draw_size - 1)) else ""))
+                             for i in range(draw_size
+                                            if (self.__size != 0) else 0))
+        return square_str
 
 
 if __name__ == "__main__":
