@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Define class MagicClass"""
 
+import math
+
 
 class MagicClass:
     """Blueprint for a Circle"""
