@@ -1,0 +1,19 @@
+``101-lazy_matrix_mul`` module test cases
+===================================
+
+Importing the function from the module:
+    >>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+test two matrix the same size:
+    >>> m_a = [[1, 2], [3, 4]]
+    >>> m_b = [[5, 6], [7, 8]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    array([[19, 22],
+           [43, 50]])
+
+test two matrix different size:
+    >>> m_a = [[1, 2, 3], [4, 5, 6]]
+    >>> m_b = [[7, 8], [9, 10], [11, 12]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    array([[ 58,  64],
+           [139, 154]])
