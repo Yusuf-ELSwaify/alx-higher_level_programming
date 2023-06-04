@@ -1,0 +1,31 @@
+``3-say_my_name`` module test cases
+===================================
+
+Importing the function from the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+test two strings:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+test one string:
+    >>> say_my_name("John")
+    My name is John 
+
+test int-string:
+    >>> say_my_name(1, "Smith")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test None:
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+test int-string:
+    >>> say_my_name("Smith", 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string

@@ -1,0 +1,59 @@
+``0-add_integer`` module test cases
+===================================
+
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+test int addition:
+    >>> add_integer(1, 2)
+    3
+
+test potive-negative int
+    >>> add_integer(100, -3)
+    97
+
+test float addition:
+    >>> add_integer(100.3, -3.3)
+    97
+
+test int-float addition:
+    >>> add_integer(100, -3.2)
+    97
+
+test one int:
+    >>> add_integer(100)
+    198
+
+test one float:
+    >>> add_integer(100.3)
+    198
+
+
+test long addition:
+    >>> add_integer(9999999999999999999999999999, 1)
+    10000000000000000000000000000
+
+test add infinity:
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+test add nan:
+    >>> add_integer(float('nan'), float('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+test string arg:
+    >>> add_integer("value", 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+test list arg:
+    >>> add_integer({}, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer

@@ -1,0 +1,63 @@
+``2-matrix_divided`` module test cases
+===================================
+
+Importing the function from the module:
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+test normal dialouge:
+    >>> text_indentation("Ahmed: Hello. How are you? Ramzy: I'm fine. Thanks.")
+    Ahmed:
+    <BLANKLINE>
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Ramzy:
+    <BLANKLINE>
+    I'm fine.
+    <BLANKLINE>    
+    Thanks.
+    <BLANKLINE>
+
+test only .?::
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+test dialouge with many spaces:
+    >>> text_indentation("           Hello.      How are you?   ")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+
+test one word:
+    >>> text_indentation("Hello")
+    Hello
+
+test one word:
+    >>> text_indentation("Hello.")
+    Hello.
+    <BLANKLINE>
+
+test None:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+    
+test int:
+    >>> text_indentation(int)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+test 0 arguments:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
