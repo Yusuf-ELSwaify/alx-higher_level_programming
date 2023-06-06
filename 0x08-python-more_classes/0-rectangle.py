@@ -6,6 +6,7 @@ class Rectangle:
     """Blueprint for a rectangle"""
     pass
 
+
 if __name__ == "__main__":
     my_rectangle = Rectangle()
     print(type(my_rectangle))
