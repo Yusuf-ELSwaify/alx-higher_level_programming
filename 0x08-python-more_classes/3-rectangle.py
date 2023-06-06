@@ -63,14 +63,15 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle.
         Represents the rectangle with the # character."""
-        rect_str = "".join((("#" * self.__width) +
-            ("\n" if (i < (self.__height - 1)) else ""))
-            for i in range(self.__height if self.__width else 0))
-        return rect_str
+        rect_str = ["#" * self.__width
+                    for i in range(self.__height if self.__width else 0)]
+        return '\n'.join(rect_str)
+
 
 if __name__ == "__main__":
     my_rectangle = Rectangle(2, 4)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print("Area: {} - Perimeter: {}"
+          .format(my_rectangle.area(), my_rectangle.perimeter()))
 
     print(str(my_rectangle))
     print(repr(my_rectangle))
@@ -83,19 +84,22 @@ if __name__ == "__main__":
     print(repr(my_rectangle))
 
     my_rectangle = Rectangle(0, 0)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print("Area: {} - Perimeter: {}"
+          .format(my_rectangle.area(), my_rectangle.perimeter()))
 
     print(str(my_rectangle))
     print(repr(my_rectangle))
 
     print("--")
     my_rectangle = Rectangle(0, 4)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print("Area: {} - Perimeter: {}"
+          .format(my_rectangle.area(), my_rectangle.perimeter()))
 
     print(str(my_rectangle))
 
     print("--")
     my_rectangle = Rectangle(4, 0)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print("Area: {} - Perimeter: {}"
+          .format(my_rectangle.area(), my_rectangle.perimeter()))
 
     print(str(my_rectangle))
