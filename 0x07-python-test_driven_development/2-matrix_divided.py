@@ -7,7 +7,7 @@ def matrix_divided(matrix, div):
     if (not isinstance(matrix, list)
             or matrix == [] or
             any(not isinstance(row, list)
-                and (not isinstance(num, (int, float)))
+                or (not isinstance(num, (int, float)))
                 for row in matrix for num in row)):
         raise TypeError("matrix must be a matrix (list of lists) of "
                         "integers/floats")
