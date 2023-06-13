@@ -1,0 +1,99 @@
+``7-base_geometry`` module test cases
+===================================
+
+Importing the function from the module:
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+test function type:
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+test print:
+    >>> print(bg) #doctest: +ELLIPSIS
+    <7-base_geometry.BaseGeometry object at ...>
+
+test pass None:
+    >>> bg = BaseGeometry(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry() takes no arguments
+
+test area function:
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+test integer validator
+    >>> bg.integer_validator("valid number", 1)
+
+test integer validator for string:
+    >>> bg.integer_validator("invalid number", "num")
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+test integer validator for boolean:
+    >>> bg.integer_validator("invalid number", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+
+test integer validator for list:
+    >>> bg.integer_validator("invalid number", [])
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+test integer validator for None:
+    >>> bg.integer_validator("invalid number", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+test integer validator for dict:
+    >>> bg.integer_validator("invalid number", {})
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+test integer validator for tuple:
+    >>> bg.integer_validator("invalid number", (1,))
+    Traceback (most recent call last):
+    ...
+    TypeError: invalid number must be an integer
+
+test integer validator for less than 0 int:
+    >>> bg.integer_validator("invalid int", -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid int must be greater than 0
+
+test not string 1st argument:
+    >>> bg.integer_validator([1], -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: [1] must be greater than 0
+
+test integer validator for equal 0 int:
+    >>> bg.integer_validator("invalid int", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid int must be greater than 0
+
+test no arguments:
+    >>> bg.integer_validator() # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 
+    'name' and 'value'
+
+test only one argument:
+    >>> bg.integer_validator("missing int") # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 
+    'value'

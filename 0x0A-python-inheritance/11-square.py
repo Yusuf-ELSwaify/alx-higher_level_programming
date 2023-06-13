@@ -24,6 +24,7 @@ class Square(Rectangle):
         string = "[Square] " + str(self.__size) + "/" + str(self.__size)
         return string
 
+
 if __name__ == "__main__":
     s = Square(13)
 
